@@ -5,14 +5,18 @@ const User = mongoose.Schema({
         type: String,
         required: true
     },
-    email:{
+    pic:{
         type: String,
         required: true
     },
-    gender:{
+    info:{
+        type: String,
+        required: true
+    },
+    link:{
         type: String,
         required: true
     }
 });
 
-export default mongoose.model('movies', User);
+export default mongoose.model('moviesnew', User);

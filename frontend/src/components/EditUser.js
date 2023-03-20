@@ -4,8 +4,9 @@ import { useNavigate, useParams } from "react-router-dom";
 
 const EditUser = () => {
   const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [gender, setGender] = useState("Male");
+  const [pic, setPic] = useState("");
+  const [info, setInfo] = useState(""); 
+  const [link, setLink] = useState(""); 
   const navigate = useNavigate();
   const { id } = useParams();
 
@@ -16,8 +17,9 @@ const EditUser = () => {
   const getUserById = async () => {
     const response = await axios.get(`http://localhost:5000/users/${id}`);
     setName(response.data.name);
-    setEmail(response.data.email);
-    setGender(response.data.gender);
+    setPic(response.data.pic);
+    setInfo(response.data.info);
+    setLink(response.data.link);
   };
 
   const updateUser = async (e) => {
@@ -25,8 +27,9 @@ const EditUser = () => {
     try {
       await axios.patch(`http://localhost:5000/users/${id}`, {
         name,
-        email,
-        gender,
+        pic,
+        info,
+        link,
       });
       navigate("/database");
     } catch (error) {
@@ -51,31 +54,44 @@ const EditUser = () => {
             </div>
           </div>
           <div className="field">
-            <label className="label">Email</label>
+            <label className="label">Pic</label>
             <div className="control">
               <input
                 type="text"
                 className="input"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Email"
+                value={pic}
+                onChange={(e) => setPic(e.target.value)}
+                placeholder="Pic Link"
               />
             </div>
           </div>
+
           <div className="field">
-            <label className="label">Gender</label>
+            <label className="label">Info</label>
             <div className="control">
-              <div className="select is-fullwidth">
-                <select
-                  value={gender}
-                  onChange={(e) => setGender(e.target.value)}
-                >
-                  <option value="Male">Male</option>
-                  <option value="Female">Female</option>
-                </select>
-              </div>
+              <input
+                type="text"
+                className="input"
+                value={info}
+                onChange={(e) => setInfo(e.target.value)}
+                placeholder="Info Link"
+              />
             </div>
           </div>
+
+          <div className="field">
+            <label className="label">Link</label>
+            <div className="control">
+              <input
+                type="text"
+                className="input"
+                value={link}
+                onChange={(e) => setLink(e.target.value)}
+                placeholder="Video Link"
+              />
+            </div>
+          </div>
+
           <div className="field">
             <div className="control">
               <button type="submit" className="button is-success">

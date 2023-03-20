@@ -4,8 +4,9 @@ import { useNavigate } from "react-router-dom";
 
 const AddUser = () => {
   const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [gender, setGender] = useState("Male");
+  const [pic, setPic] = useState("");
+  const [info, setInfo] = useState(""); 
+  const [link, setLink] = useState(""); 
   const navigate = useNavigate();
 
 //const url = "mongodb+srv://superuser:superuser@crud.a1359sv.mongodb.net/?retryWrites=true&w=majority"
@@ -15,8 +16,9 @@ const AddUser = () => {
     try {
       await axios.post("http://localhost:5000/users", {
         name,
-        email,
-        gender,
+        pic,
+        info,
+        link
       });
       navigate("/database");
     } catch (error) {
@@ -41,31 +43,44 @@ const AddUser = () => {
             </div>
           </div>
           <div className="field">
-            <label className="label">Email</label>
+            <label className="label">Pic</label>
             <div className="control">
               <input
                 type="text"
                 className="input"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Email"
+                value={pic}
+                onChange={(e) => setPic(e.target.value)}
+                placeholder="pic Link"
               />
             </div>
           </div>
           <div className="field">
-            <label className="label">Gender</label>
+            <label className="label">Info</label>
             <div className="control">
-              <div className="select is-fullwidth">
-                <select
-                  value={gender}
-                  onChange={(e) => setGender(e.target.value)}
-                >
-                  <option value="Male">Male</option>
-                  <option value="Female">Female</option>
-                </select>
-              </div>
+              <input
+                type="text"
+                className="input"
+                value={info}
+                onChange={(e) => setInfo(e.target.value)}
+                placeholder="Info"
+              />
             </div>
           </div>
+
+          <div className="field">
+            <label className="label">Link</label>
+            <div className="control">
+              <input
+                type="text"
+                className="input"
+                value={link}
+                onChange={(e) => setLink(e.target.value)}
+                placeholder="link To Video"
+              />
+            </div>
+          </div>
+          
+
           <div className="field">
             <div className="control">
               <button type="submit" className="button is-success">

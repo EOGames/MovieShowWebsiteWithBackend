@@ -20,7 +20,7 @@ const App = function()
             <Route path='/' element = {<Home />} />
             <Route path='/movies' element = {<Movies />} />
             <Route path='/shows' element = {<Shows  />} />
-            <Route path="add" element={<AddUser />} />
+            <Route path="/database/add" element={<AddUser />} />
             <Route path="/database/edit/:id" element={<EditUser />} />
             <Route path="/database" element={<UserList />} />
             {/* <Route path='/login' element = {<Login  />} /> */}
