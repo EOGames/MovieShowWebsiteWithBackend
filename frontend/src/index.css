@@ -1,0 +1,208 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #080808;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.header 
+{
+  display: flex;
+  background-color: #333333;
+  height: 10vh;
+  color: wheat;
+  justify-content: center;
+  font-size: 1em;
+  font-weight: 900;
+  text-align: center;
+}
+
+.activeBar
+{
+  background-color: #646464;
+  display: flex;
+  justify-content: center;
+  font-size: 1em;
+  font-weight: 900;
+  color: rgb(252, 252, 252);
+  padding: 10px;
+}
+
+.activebar_btn
+{
+  color: aliceblue;
+  margin-left: auto;
+}
+
+.activebar_btn1
+{
+  color: aliceblue;
+  text-decoration: none;
+  padding-right: 25px;
+}
+
+#serchbar
+{
+  width: 20vw;
+}
+
+.srchHolder
+{
+  display: flex;
+  justify-content: center;
+  padding: 20px
+}
+#videoListHolder
+{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center ;
+  align-items: center;
+  justify-items: center;
+  width: 100%;
+  flex-direction: row;
+}
+.card
+{
+ box-shadow: 2px 2px 7px #71d7ff;
+  margin: 20px;
+  width: 35%;
+  border-radius: 7%;
+  text-align: center;
+  color: white;
+  text-shadow: 1px 1px 7px black;
+  background-color: #2B2826;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  font-size: .77em;
+}
+.video
+{
+  width: 85%;
+  height: 250px;
+  padding: 1em;
+  border: 0;
+}
+
+.video:hover
+{
+  transform: scale(1.1);
+}
+.pic
+{
+  width: 85%;
+  max-height: 25em;
+  border-radius: 20%;
+  padding: 1em;
+}
+
+.pic:hover
+{
+  transform: scale(1.1);
+}
+
+iframe, object, embed {
+  max-width: 100%;
+}
+
+.preview_Holder
+{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin: 10px;
+}
+.preview
+{
+  width: 20%;
+  padding: 5px;
+  animation: AnimatePreview 2s infinite;
+  border-radius: 5%;
+}
+
+#topText
+{
+  color: white;
+  font-weight: 900;
+  text-shadow: 1px 1px 5px #94f8ff;
+  text-align: center;
+}
+
+@keyframes AnimatePreview
+{
+  50%
+  {
+    border: 2px solid rgb(160, 64, 64);
+  }
+
+  100%
+  {
+    border: 2px solid skyblue;
+  }
+}
+
+@media screen and (max-width: 1200px)
+{
+      .header 
+    {
+      display: flex;
+      background-color: #292018;
+      height: 10vh;
+      color: wheat;
+      justify-content: center;
+      font-size: .95em;
+      font-weight: 900;
+      text-align: center;
+    }
+
+      .card
+    {
+      box-shadow: 2px 2px 7px #71d7ff;
+      margin: 20px;
+      width: 70vw;
+      height: 80vh;
+      border-radius: 7%;
+      text-align: center;
+      color: white;
+      text-shadow: 1px 1px 7px black;
+      background-color: #2B2826;
+      justify-content: center;
+      justify-items: center;
+      align-items: center;
+      padding: 20px;
+      font-size: .59em;
+    }
+
+      .pic
+    {
+      width: 95%;
+      height: 25vh;
+      border-radius: 20%;
+      padding: 1em;
+    }
+
+     .video
+    {
+      width: 95%;
+      height: 30vh;
+      padding: 0em;
+      border: 0;
+    }
+    #serchbar
+    {
+      width: 70%;
+    }
+
+}
+
+
+

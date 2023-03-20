@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <script type="text/javascript" src="./src/database.js">
+    </script>
+</head>
+<body>
+    
+    <script>
+
+        var fs = require('fs');
+        fs.readfile('./src/database.js','utf-8',function(err,data)
+            { 
+                if (err)
+                {
+                    throw err;
+                }
+
+                console.log(data);
+            }
+        );
+        
+        function GetData()
+        {
+            console.log(d);
+        }
+    </script>
+</body>
+</html>
